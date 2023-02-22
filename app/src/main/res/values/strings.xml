@@ -2,4 +2,6 @@
     <string name="app_name">AndroidApplication</string>
     <string name="my_name">Maxim</string>
     <string name="last_name">Petrunin</string>
+    <string name="button_name">Нажать</string>
+    <string name="enter_name">Введите ваше имя</string>
 </resources>
