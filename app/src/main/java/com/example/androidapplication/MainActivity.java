@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
         imageView2.setImageResource(R.drawable.greenhowl);
 
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 clickMyButton(view);
             }
         };
-        button2.setOnClickListener(listener);
-//
+        binding.button2.setOnClickListener(listener);
+
 //        // Использование ViewBinding
 //        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
 //        setContentView(binding.getRoot());
