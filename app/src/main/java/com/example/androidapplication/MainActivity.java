@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MyButton";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,5 +27,17 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
         imageView2.setImageResource(R.drawable.greenhowl);
+
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("MyButton", "Кнопка была нажата программно");
+            }
+        };
+        button2.setOnClickListener(listener);
+    }
+
+    public void clickMyButton(View view){
+        Log.i("MyButton", "Кнопка была нажата декларативно");
     }
 }
