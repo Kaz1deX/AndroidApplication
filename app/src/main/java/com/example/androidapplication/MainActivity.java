@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.androidapplication.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MyButton";

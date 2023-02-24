@@ -22,6 +22,9 @@ public class SecondActivity extends AppCompatActivity {
         String name = arguments.get("name").toString();
         textView4.setText("Добро пожаловать, " + name);
 
+        TextView textView5 = (TextView) findViewById(R.id.textView5);
+        textView5.setText("Хотите поменять имя?");
+
         Button button5 = (Button) findViewById(R.id.button5);
         button5.setText("Назад");
         View.OnClickListener listener = new View.OnClickListener() {

@@ -4,4 +4,5 @@
     <string name="last_name">Petrunin</string>
     <string name="button_name">Нажать</string>
     <string name="enter_name">Введите ваше имя</string>
+    <string name="text_hello">Добро пожаловать в приложение автошколы Kaz1deX</string>
 </resources>
