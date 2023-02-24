@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
         imageView2.setImageResource(R.drawable.greenhowl);
 
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+//        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+//        setContentView(binding.getRoot());
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 clickMyButton(view);
             }
         };
-        binding.button2.setOnClickListener(listener);
+        button2.setOnClickListener(listener);
 
 //        // Использование ViewBinding
 //        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -63,13 +63,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SecondActivity.class);
         intent.putExtra("name", editTextTextPersonName2.getText().toString());
         startActivityForResult(intent, 1);
+        //mStartForResult.launch(intent);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if ((requestCode == 1) && (resultCode == RESULT_OK)) {
-            String name = "Ваше имя: " + data.getStringExtra("back") + " ?";
+            String name = "Ваше имя: " + data.getStringExtra("back") + "?";
             textView2.setText(name);
         }
     }
