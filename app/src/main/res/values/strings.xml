@@ -5,4 +5,6 @@
     <string name="button_name">Нажать</string>
     <string name="enter_name">Введите ваше имя</string>
     <string name="text_hello">Добро пожаловать в приложение автошколы Kaz1deX</string>
+    <string name="button_next">Далее</string>
+    <string name="main_text">Автошкола Kaz1deX</string>
 </resources>
