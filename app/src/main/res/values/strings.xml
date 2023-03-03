@@ -6,5 +6,8 @@
     <string name="enter_name">Введите ваше имя</string>
     <string name="text_hello">Добро пожаловать в приложение автошколы Kaz1deX</string>
     <string name="button_next">Далее</string>
+    <string name="button_back">Назад</string>
     <string name="main_text">Автошкола Kaz1deX</string>
+    <string name="text_name_information">Ваше имя: </string>
+    <string name="change_name">Хотите ввести другое имя?</string>
 </resources>
