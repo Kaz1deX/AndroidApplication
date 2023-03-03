@@ -6,7 +6,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Fragment hello_fragment, confirm_fragment;
@@ -21,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null){
             fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().setReorderingAllowed(true).add(R.id.fragment_container_view, HelloFragment.class, null).commit();
+            fragmentManager.beginTransaction().setReorderingAllowed(true)
+                    .add(R.id.fragment_container_view, HelloFragment
+                            .class, null).commit();
         }
     }
 

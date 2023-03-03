@@ -34,7 +34,7 @@ public class ConfirmFragment extends Fragment {
         super.onCreate(savedInstanceState);
         fragmentManager = getParentFragmentManager();
 
-        fragmentManager.setFragmentResultListener("change to RepositoryFragment", this, (requestKey, result) -> {
+        fragmentManager.setFragmentResultListener("change ConfirmFragment", this, (requestKey, result) -> {
             String results = result.getString("resultText");
             binding.textNameInformation.setText("Ваше имя: " + results);
         });
@@ -54,7 +54,7 @@ public class ConfirmFragment extends Fragment {
         binding.buttonBack.setOnClickListener(view1 -> {
             Bundle result = new Bundle();
             result.putString("resultText", binding.textNameInformation.getText().toString());
-            fragmentManager.setFragmentResult("change to HubFragment", result);
+            fragmentManager.setFragmentResult("change HelloFragment", result);
             mainActivity.changeFragment(view1);
         });
     }
