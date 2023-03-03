@@ -1,47 +1,46 @@
 package com.example.androidapplication;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentResultListener;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
+    Fragment hello_fragment, confirm_fragment;
+    FragmentManager fragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        if (savedInstanceState == null){
-//            getSupportFragmentManager().beginTransaction()
-//                    .setReorderingAllowed(true)
-//                    .add(R.id.fragment_container_view,
-//                            HelloFragment.class, null).commit();
-//        }
+        hello_fragment = new HelloFragment();
+        confirm_fragment = new ConfirmFragment();
 
-        ImageButton name_settings = (ImageButton) findViewById(R.id.name_settings);
-        name_settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction()
-                        .setReorderingAllowed(true)
-                        .add(R.id.fragment_container_view,
-                                HelloFragment.class, null).commit();
-            }
-        });
+        if (savedInstanceState == null){
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().setReorderingAllowed(true).add(R.id.fragment_container_view, HelloFragment.class, null).commit();
+        }
+    }
 
-        ImageButton name_settings2 = (ImageButton) findViewById(R.id.name_settings2);
-        name_settings2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction()
-                        .setReorderingAllowed(true)
-                        .add(R.id.fragment_container_view,
-                                ConfirmFragment.class, null).commit();
-            }
-        });
+    public void changeFragment(View view) {
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        switch (view.getId()) {
+            case R.id.button_back:
+                if (hello_fragment.isVisible())
+                    return;
+                fragmentTransaction.replace(R.id.fragment_container_view, hello_fragment);
+                break;
+            case R.id.button_hello_fragment:
+                if (confirm_fragment.isVisible())
+                    return;
+                fragmentTransaction.replace(R.id.fragment_container_view, confirm_fragment);
+                break;
+        }
+
+        fragmentTransaction.commit();
     }
 }

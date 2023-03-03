@@ -10,4 +10,5 @@
     <string name="main_text">Автошкола Kaz1deX</string>
     <string name="text_name_information">Ваше имя: </string>
     <string name="change_name">Хотите ввести другое имя?</string>
+    <string name="your_name">Ваше имя</string>
 </resources>
