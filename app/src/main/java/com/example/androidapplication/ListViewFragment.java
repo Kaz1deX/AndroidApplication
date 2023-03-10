@@ -6,9 +6,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.example.androidapplication.databinding.FragmentListViewBinding;
 
@@ -17,7 +20,6 @@ import java.util.List;
 
 public class ListViewFragment extends Fragment {
     FragmentListViewBinding binding;
-
     public ListViewFragment(){
         super(R.layout.fragment_list_view);
     }
@@ -45,5 +47,12 @@ public class ListViewFragment extends Fragment {
 
         MyCustomListViewAdapter listViewAdapter = new MyCustomListViewAdapter(getActivity(), R.layout.question_item, questions_array);
         binding.listView.setAdapter(listViewAdapter);
+        binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getContext(), questions_array.get(i), Toast.LENGTH_SHORT).show();
+                Log.i("ListView", "Click item LisView");
+            }
+        });
     }
 }
