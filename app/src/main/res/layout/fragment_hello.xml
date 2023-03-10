@@ -12,12 +12,24 @@
         android:layout_width="200dp"
         android:layout_height="65dp"
         android:backgroundTint="@color/my_color_orange"
-        android:text="@string/button_next"
+        android:text="ListView"
         android:textSize="@dimen/my_dimension16"
         android:textStyle="bold"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_hello_fragment2"
+        android:layout_width="200dp"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/my_color_orange"
+        android:text="RecyclerView"
+        android:textSize="@dimen/my_dimension16"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/imageView8"

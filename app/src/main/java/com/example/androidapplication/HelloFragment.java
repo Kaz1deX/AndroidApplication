@@ -31,6 +31,12 @@ public class HelloFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentHelloBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         fragmentManager = getParentFragmentManager();
         fragmentManager.setFragmentResultListener("requestKey", this, new FragmentResultListener() {
@@ -45,11 +51,9 @@ public class HelloFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container_view, new ConfirmFragment());
+                fragmentTransaction.replace(R.id.fragment_container_view, new ListViewFragment());
                 fragmentTransaction.commit();
             }
         });
-
-        return binding.getRoot();
     }
 }
