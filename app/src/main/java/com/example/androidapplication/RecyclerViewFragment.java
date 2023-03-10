@@ -42,7 +42,9 @@ public class RecyclerViewFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         List<String> themes_array = new ArrayList<String>();
-        themes_array.add("Тема 1");
+        for (int i = 0; i < 200; i++){
+            themes_array.add("Тема " + (i+1));
+        }
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         binding.recyclerView.setLayoutManager(layoutManager);

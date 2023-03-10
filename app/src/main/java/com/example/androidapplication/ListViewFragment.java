@@ -39,7 +39,9 @@ public class ListViewFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         List<String> questions_array = new ArrayList<String>();
-        questions_array.add("Вопрос 1");
+        for (int i = 0; i < 800; i++){
+            questions_array.add("Вопрос " + (i+1));
+        }
 
         MyCustomListViewAdapter listViewAdapter = new MyCustomListViewAdapter(getActivity(), R.layout.question_item, questions_array);
         binding.listView.setAdapter(listViewAdapter);
