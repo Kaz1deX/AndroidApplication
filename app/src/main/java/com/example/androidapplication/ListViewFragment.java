@@ -51,7 +51,7 @@ public class ListViewFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getContext(), questions_array.get(i), Toast.LENGTH_SHORT).show();
-                Log.i("ListView", "Click item LisView");
+                Log.i("ListView", questions_array.get(i));
             }
         });
     }
