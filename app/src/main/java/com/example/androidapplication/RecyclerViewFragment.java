@@ -51,5 +51,8 @@ public class RecyclerViewFragment extends Fragment {
 
         MyCustomRecyclerViewAdapter recyclerViewAdapter = new MyCustomRecyclerViewAdapter(getActivity(), themes_array);
         binding.recyclerView.setAdapter(recyclerViewAdapter);
+
+        String arguments = getArguments().getString("navigation");
+        binding.navigationText.setText(arguments);
     }
 }

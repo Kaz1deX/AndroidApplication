@@ -38,14 +38,18 @@ public class HelloFragment extends Fragment {
         binding.buttonHelloFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_helloFragment_to_listViewFragment);
+                Bundle bundle = new Bundle();
+                bundle.putString("navigation", "Navigation text 1");
+                Navigation.findNavController(view).navigate(R.id.action_helloFragment_to_listViewFragment, bundle);
             }
         });
 
         binding.buttonHelloFragment2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_helloFragment_to_recyclerViewFragment);
+                Bundle bundle = new Bundle();
+                bundle.putString("navigation", binding.editTextTextPersonName4.getText().toString());
+                Navigation.findNavController(view).navigate(R.id.action_helloFragment_to_recyclerViewFragment, bundle);
             }
         });
     }
