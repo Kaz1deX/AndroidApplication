@@ -12,8 +12,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.androidapplication.databinding.FragmentHelloBinding;
 
 public class HelloFragment extends Fragment {
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
+//    FragmentManager fragmentManager;
+//    FragmentTransaction fragmentTransaction;
     FragmentHelloBinding binding;
     public HelloFragment(){
         super(R.layout.fragment_hello);
@@ -35,11 +35,11 @@ public class HelloFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        fragmentManager = getParentFragmentManager();
-
+        FragmentManager fragmentManager = getParentFragmentManager();
         binding.buttonHelloFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FragmentTransaction fragmentTransaction;
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container_view, new ListViewFragment());
                 fragmentTransaction.commit();
@@ -49,6 +49,7 @@ public class HelloFragment extends Fragment {
         binding.buttonHelloFragment2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FragmentTransaction fragmentTransaction;
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container_view, new RecyclerViewFragment());
                 fragmentTransaction.commit();
