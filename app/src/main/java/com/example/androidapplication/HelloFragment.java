@@ -9,11 +9,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
+
 import com.example.androidapplication.databinding.FragmentHelloBinding;
 
 public class HelloFragment extends Fragment {
-//    FragmentManager fragmentManager;
-//    FragmentTransaction fragmentTransaction;
     FragmentHelloBinding binding;
     public HelloFragment(){
         super(R.layout.fragment_hello);
@@ -35,24 +35,17 @@ public class HelloFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        FragmentManager fragmentManager = getParentFragmentManager();
         binding.buttonHelloFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fragmentTransaction;
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container_view, new ListViewFragment());
-                fragmentTransaction.commit();
+                Navigation.findNavController(view).navigate(R.id.action_helloFragment_to_listViewFragment);
             }
         });
 
         binding.buttonHelloFragment2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fragmentTransaction;
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container_view, new RecyclerViewFragment());
-                fragmentTransaction.commit();
+                Navigation.findNavController(view).navigate(R.id.action_helloFragment_to_recyclerViewFragment);
             }
         });
     }

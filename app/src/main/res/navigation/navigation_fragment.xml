@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_fragment"
+    app:startDestination="@id/helloFragment">
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.example.androidapplication.HelloFragment"
+        android:label="fragment_hello"
+        tools:layout="@layout/fragment_hello" >
+        <action
+            android:id="@+id/action_helloFragment_to_listViewFragment"
+            app:destination="@id/listViewFragment" />
+        <action
+            android:id="@+id/action_helloFragment_to_recyclerViewFragment"
+            app:destination="@id/recyclerViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listViewFragment"
+        android:name="com.example.androidapplication.ListViewFragment"
+        android:label="fragment_list_view"
+        tools:layout="@layout/fragment_list_view" />
+    <fragment
+        android:id="@+id/recyclerViewFragment"
+        android:name="com.example.androidapplication.RecyclerViewFragment"
+        android:label="fragment_recycler_view"
+        tools:layout="@layout/fragment_recycler_view" />
+</navigation>
