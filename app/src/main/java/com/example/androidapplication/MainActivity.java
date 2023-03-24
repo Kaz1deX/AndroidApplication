@@ -62,7 +62,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        if (requestCode == 1 && grantResults.length == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            }
+        }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
@@ -73,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText("Настало время порешать билеты")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission
+                .POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
             notificationManager.notify(1, builder.build());
         }
     }

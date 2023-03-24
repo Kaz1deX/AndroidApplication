@@ -13,13 +13,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 
+import androidx.annotation.Nullable;
+
 public class MyService extends Service {
     private WindowManager mWindowManager;
     private View mBannerView;
 
+    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        return null;
     }
 
     @Override
@@ -39,14 +42,15 @@ public class MyService extends Service {
                 PixelFormat.TRANSLUCENT);
 
         params.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
-        params.y = 100;
+        params.y = 1200;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
             Intent intent2 = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                     Uri.parse("package:" + getPackageName()));
             intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent2);
-        } else {
+        }
+        else {
             mWindowManager.addView(mBannerView, params);
         }
 
@@ -63,21 +67,13 @@ public class MyService extends Service {
         });
 
         return START_STICKY;
-
-
-
-
-
-
-        //return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
-
         if (mBannerView != null) {
             mWindowManager.removeView(mBannerView);
         }
+        super.onDestroy();
     }
 }
