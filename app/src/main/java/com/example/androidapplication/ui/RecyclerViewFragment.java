@@ -1,4 +1,4 @@
-package com.example.androidapplication;
+package com.example.androidapplication.ui;
 
 import android.os.Bundle;
 
@@ -12,7 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.androidapplication.databinding.FragmentListViewBinding;
+import com.example.androidapplication.MyCustomRecyclerViewAdapter;
+import com.example.androidapplication.R;
 import com.example.androidapplication.databinding.FragmentRecyclerViewBinding;
 
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class RecyclerViewFragment extends Fragment {
 
         List<String> themes_array = new ArrayList<String>();
         for (int i = 0; i < 200; i++){
-            themes_array.add("Тема " + (i+1));
+            themes_array.add("Вопрос " + (i+1));
         }
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());

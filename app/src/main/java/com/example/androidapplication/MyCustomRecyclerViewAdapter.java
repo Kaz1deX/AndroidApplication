@@ -33,7 +33,7 @@ public class MyCustomRecyclerViewAdapter extends RecyclerView.Adapter<MyCustomRe
     @Override
     public void onBindViewHolder(MyCustomRecyclerViewAdapter.ViewHolder holder, int position) {
         holder.question_text.setText(themes.get(position));
-        holder.car_image.setImageResource(R.drawable.greenhowl);
+        holder.car_image.setImageResource(R.drawable.car);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

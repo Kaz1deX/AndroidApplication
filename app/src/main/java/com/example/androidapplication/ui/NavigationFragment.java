@@ -1,4 +1,4 @@
-package com.example.androidapplication;
+package com.example.androidapplication.ui;
 
 import android.os.Bundle;
 
@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.androidapplication.R;
 import com.example.androidapplication.databinding.FragmentHelloBinding;
 import com.example.androidapplication.databinding.FragmentNavigationBinding;
 

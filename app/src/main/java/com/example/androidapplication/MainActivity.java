@@ -47,14 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 showNotification();
             }
         });
-
-        binding.nameSettings2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MyService.class);
-                startService(intent);
-            }
-        });
     }
 
     public void requestPermissions() {

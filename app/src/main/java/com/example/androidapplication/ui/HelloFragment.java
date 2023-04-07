@@ -1,4 +1,4 @@
-package com.example.androidapplication;
+package com.example.androidapplication.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
+import com.example.androidapplication.R;
 import com.example.androidapplication.databinding.FragmentHelloBinding;
 
 public class HelloFragment extends Fragment {
@@ -34,15 +35,6 @@ public class HelloFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        binding.buttonHelloFragment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putString("navigation", "Navigation text 1");
-                Navigation.findNavController(view).navigate(R.id.action_helloFragment_to_listViewFragment, bundle);
-            }
-        });
 
         binding.buttonHelloFragment2.setOnClickListener(new View.OnClickListener() {
             @Override
