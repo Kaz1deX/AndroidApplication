@@ -1,4 +1,4 @@
-package com.example.androidapplication.ui;
+package com.example.androidapplication.ui.fragments;
 
 import android.os.Bundle;
 
@@ -14,12 +14,11 @@ import android.view.ViewGroup;
 import com.example.androidapplication.R;
 import com.example.androidapplication.databinding.FragmentHelloBinding;
 import com.example.androidapplication.databinding.FragmentNameBinding;
-import com.example.androidapplication.databinding.FragmentStatisticBinding;
 
-public class StatisticFragment extends Fragment {
-    FragmentStatisticBinding binding;
+public class NameFragment extends Fragment {
+    FragmentNameBinding binding;
 
-    public StatisticFragment(){
+    public NameFragment(){
         super(R.layout.fragment_name);
     }
 
@@ -31,7 +30,7 @@ public class StatisticFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentStatisticBinding.inflate(inflater, container, false);
+        binding = FragmentNameBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -39,7 +38,20 @@ public class StatisticFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        String arguments = getArguments().getString("name");
-        binding.statistic.setText(arguments + ", ваша статистика решённых вопросов:");
+        binding.buttonName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("name", binding.editTextTextPersonName4.getText().toString());
+                Navigation.findNavController(view).navigate(R.id.action_nameFragment_to_statisticFragment, bundle);
+            }
+        });
+
+        binding.buttonName2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_nameFragment_to_recyclerViewFragment2);
+            }
+        });
     }
 }

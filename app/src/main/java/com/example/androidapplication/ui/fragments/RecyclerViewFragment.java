@@ -1,4 +1,4 @@
-package com.example.androidapplication.ui;
+package com.example.androidapplication.ui.fragments;
 
 import android.os.Bundle;
 
@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 
 import com.example.androidapplication.R;
 import com.example.androidapplication.databinding.FragmentRecyclerViewBinding;
+import com.example.androidapplication.ui.adapters.MyCustomRecyclerViewAdapter;
+import com.example.androidapplication.ui.viewmodels.QuestionViewModel;
 
 public class RecyclerViewFragment extends Fragment {
     FragmentRecyclerViewBinding binding;

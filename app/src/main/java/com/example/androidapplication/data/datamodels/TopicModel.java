@@ -1,14 +1,14 @@
-package com.example.androidapplication.data;
+package com.example.androidapplication.data.datamodels;
 
-public class Topic {
+public class TopicModel {
     private String topic;
     private int number;
 
-    public Topic() {
+    public TopicModel() {
         this("No topic", 0);
     }
 
-    public Topic(String topic, int number) {
+    public TopicModel(String topic, int number) {
         this.topic = topic;
         this.number = number;
     }

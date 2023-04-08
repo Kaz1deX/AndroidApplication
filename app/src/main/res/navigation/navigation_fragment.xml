@@ -6,7 +6,7 @@
     app:startDestination="@id/helloFragment">
     <fragment
         android:id="@+id/helloFragment"
-        android:name="com.example.androidapplication.ui.HelloFragment"
+        android:name="com.example.androidapplication.ui.fragments.HelloFragment"
         android:label="fragment_hello"
         tools:layout="@layout/fragment_hello" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/recyclerViewFragment2"
-        android:name="com.example.androidapplication.ui.RecyclerViewFragment"
+        android:name="com.example.androidapplication.ui.fragments.RecyclerViewFragment"
         android:label="fragment_recycler_view"
         tools:layout="@layout/fragment_recycler_view" >
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/nameFragment"
-        android:name="com.example.androidapplication.ui.NameFragment"
+        android:name="com.example.androidapplication.ui.fragments.NameFragment"
         android:label="fragment_name"
         tools:layout="@layout/fragment_name" >
         <action
@@ -36,12 +36,12 @@
     </fragment>
     <fragment
         android:id="@+id/statisticFragment"
-        android:name="com.example.androidapplication.ui.StatisticFragment"
+        android:name="com.example.androidapplication.ui.fragments.StatisticFragment"
         android:label="fragment_statistic"
         tools:layout="@layout/fragment_statistic" />
     <fragment
         android:id="@+id/itemInfoFragment"
-        android:name="com.example.androidapplication.ui.ItemInfoFragment"
+        android:name="com.example.androidapplication.ui.fragments.ItemInfoFragment"
         android:label="fragment_item_info"
         tools:layout="@layout/fragment_item_info" />
 </navigation>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
-    tools:context=".ui.NameFragment">
+    tools:context=".ui.fragments.NameFragment">
 
     <Button
         android:id="@+id/button_name"

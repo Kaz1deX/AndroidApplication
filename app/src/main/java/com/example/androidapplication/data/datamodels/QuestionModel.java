@@ -1,14 +1,14 @@
-package com.example.androidapplication.data;
+package com.example.androidapplication.data.datamodels;
 
-public class Question {
+public class QuestionModel {
     private String question;
     private int number;
 
-    public Question() {
+    public QuestionModel() {
         this("No question", 0);
     }
 
-    public Question(String question, int number) {
+    public QuestionModel(String question, int number) {
         this.question = question;
         this.number = number;
     }

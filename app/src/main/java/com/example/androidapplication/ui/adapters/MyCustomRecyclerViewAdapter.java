@@ -1,4 +1,4 @@
-package com.example.androidapplication.ui;
+package com.example.androidapplication.ui.adapters;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,14 +12,14 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidapplication.R;
-import com.example.androidapplication.data.Question;
+import com.example.androidapplication.data.datamodels.QuestionModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyCustomRecyclerViewAdapter extends RecyclerView.Adapter<MyCustomRecyclerViewAdapter.ViewHolder>{
     private LayoutInflater inflater;
-    private List<Question> questions;
+    private List<QuestionModel> questions;
     private Context context;
 
     public MyCustomRecyclerViewAdapter(Context context) {
@@ -36,7 +36,7 @@ public class MyCustomRecyclerViewAdapter extends RecyclerView.Adapter<MyCustomRe
 
     @Override
     public void onBindViewHolder(MyCustomRecyclerViewAdapter.ViewHolder holder, int position) {
-        Question question = questions.get(position);
+        QuestionModel question = questions.get(position);
         holder.question_text.setText(question.getQuestion());
         holder.car_image.setImageResource(R.drawable.car);
 
@@ -65,7 +65,7 @@ public class MyCustomRecyclerViewAdapter extends RecyclerView.Adapter<MyCustomRe
         }
     }
 
-    public void updateQuestions(List<Question> questions) {
+    public void updateQuestions(List<QuestionModel> questions) {
         this.questions.clear();
         this.questions = questions;
         notifyDataSetChanged();
