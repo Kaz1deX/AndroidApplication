@@ -1,9 +1,9 @@
-package com.example.androidapplication;
+package com.example.androidapplication.data;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.androidapplication.model.Question;
+import com.example.androidapplication.data.Question;
 
 import java.util.ArrayList;
 import java.util.List;

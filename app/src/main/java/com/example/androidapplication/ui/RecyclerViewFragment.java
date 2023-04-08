@@ -7,19 +7,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.androidapplication.MyCustomRecyclerViewAdapter;
-import com.example.androidapplication.QuestionViewModel;
 import com.example.androidapplication.R;
 import com.example.androidapplication.databinding.FragmentRecyclerViewBinding;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class RecyclerViewFragment extends Fragment {
     FragmentRecyclerViewBinding binding;

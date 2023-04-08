@@ -1,4 +1,4 @@
-package com.example.androidapplication.model;
+package com.example.androidapplication.data;
 
 public class Topic {
     private String topic;

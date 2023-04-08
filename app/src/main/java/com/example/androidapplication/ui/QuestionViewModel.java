@@ -1,9 +1,10 @@
-package com.example.androidapplication;
+package com.example.androidapplication.ui;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.androidapplication.model.Question;
+import com.example.androidapplication.data.QuestionRepository;
+import com.example.androidapplication.data.Question;
 
 import java.util.List;
 
