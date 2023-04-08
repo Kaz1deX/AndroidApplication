@@ -1,4 +1,4 @@
-package com.example.androidapplication;
+package com.example.androidapplication.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.View;
 
 
+import com.example.androidapplication.R;
 import com.example.androidapplication.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

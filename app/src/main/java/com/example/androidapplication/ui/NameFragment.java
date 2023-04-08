@@ -50,9 +50,7 @@ public class NameFragment extends Fragment {
         binding.buttonName2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putString("name", binding.editTextTextPersonName4.getText().toString());
-                Navigation.findNavController(view).navigate(R.id.action_nameFragment_to_recyclerViewFragment2, bundle);
+                Navigation.findNavController(view).navigate(R.id.action_nameFragment_to_recyclerViewFragment2);
             }
         });
     }

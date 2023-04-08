@@ -1,4 +1,4 @@
-package com.example.androidapplication;
+package com.example.androidapplication.ui;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.androidapplication.R;
 import com.example.androidapplication.data.Question;
 
 import java.util.ArrayList;
