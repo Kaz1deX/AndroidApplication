@@ -46,17 +46,12 @@ public class RecyclerViewFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        List<String> questions_array = new ArrayList<String>();
-//        for (int i = 0; i < 200; i++){
-//            questions_array.add("Вопрос " + (i+1));
-//        }
-
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         binding.recyclerView.setLayoutManager(layoutManager);
 
         MyCustomRecyclerViewAdapter recyclerViewAdapter = new MyCustomRecyclerViewAdapter(getActivity());
         binding.recyclerView.setAdapter(recyclerViewAdapter);
 
-//        questionViewModel.questions.observe(getViewLifecycleOwner(), questions -> recyclerViewAdapter.(questions));
+        questionViewModel.questions.observe(getViewLifecycleOwner(), questions -> recyclerViewAdapter.updateQuestions(questions));
     }
 }

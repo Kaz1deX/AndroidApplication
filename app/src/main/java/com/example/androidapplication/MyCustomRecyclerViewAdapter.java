@@ -65,4 +65,10 @@ public class MyCustomRecyclerViewAdapter extends RecyclerView.Adapter<MyCustomRe
             car_image = view.findViewById(R.id.car_image);
         }
     }
+
+    public void updateQuestions(List<Question> questions) {
+        this.questions.clear();
+        this.questions = questions;
+        notifyDataSetChanged();
+    }
 }
