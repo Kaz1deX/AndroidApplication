@@ -1,6 +1,7 @@
 package com.example.androidapplication;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,18 +10,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.androidapplication.model.Question;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyCustomRecyclerViewAdapter extends RecyclerView.Adapter<MyCustomRecyclerViewAdapter.ViewHolder>{
     private LayoutInflater inflater;
-    private List<String> themes;
+    private List<Question> questions;
     private Context context;
 
-    public MyCustomRecyclerViewAdapter(Context context, List<String> themes) {
+    public MyCustomRecyclerViewAdapter(Context context) {
         this.inflater = LayoutInflater.from(context);
-        this.themes = themes;
+        this.questions = new ArrayList<>();
         this.context = context;
     }
 
@@ -32,21 +37,23 @@ public class MyCustomRecyclerViewAdapter extends RecyclerView.Adapter<MyCustomRe
 
     @Override
     public void onBindViewHolder(MyCustomRecyclerViewAdapter.ViewHolder holder, int position) {
-        holder.question_text.setText(themes.get(position));
+        Question question = questions.get(position);
+        holder.question_text.setText(question.getQuestion());
         holder.car_image.setImageResource(R.drawable.car);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, themes.get(holder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
-                Log.i("RecyclerView", themes.get(holder.getAdapterPosition()));
+                Bundle bundle = new Bundle();
+                bundle.putString("question", question.getQuestion());
+                Navigation.findNavController(view).navigate(R.id.action_recyclerViewFragment2_to_itemInfoFragment, bundle);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return themes.size();
+        return questions.size();
     }
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView question_text;

@@ -39,5 +39,11 @@ public class ItemInfoFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Bundle trBundle = getArguments();
+        if (trBundle != null) {
+            if (trBundle.containsKey("question"))
+                binding.iteminfo.setText(trBundle.getString("question"));
+        }
     }
 }

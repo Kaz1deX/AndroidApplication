@@ -17,7 +17,11 @@
         android:id="@+id/recyclerViewFragment2"
         android:name="com.example.androidapplication.ui.RecyclerViewFragment"
         android:label="fragment_recycler_view"
-        tools:layout="@layout/fragment_recycler_view" />
+        tools:layout="@layout/fragment_recycler_view" >
+        <action
+            android:id="@+id/action_recyclerViewFragment2_to_itemInfoFragment"
+            app:destination="@id/itemInfoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nameFragment"
         android:name="com.example.androidapplication.ui.NameFragment"
