@@ -1,6 +1,7 @@
 package com.example.androidapplication.ui.fragments;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
@@ -50,6 +51,14 @@ public class NameFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // sharedPreferences
+        SharedPreferences sharedPreferences = getActivity()
+                .getSharedPreferences("student", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        binding.editTextTextPersonName4.setText(sharedPreferences
+                .getString("student", "No name"));
+
         binding.buttonName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,10 +69,14 @@ public class NameFragment extends Fragment {
                 String file_name = "studentName.txt";
 
                 // app-specific storage
-                //createFileAppSpecificStorage(file_name, student_name);
+                createFileAppSpecificStorage(file_name, student_name);
 
                 // external storage
                 createFileExternalStorage(file_name, student_name);
+
+                editor.putString("student", binding.editTextTextPersonName4
+                        .getText().toString());
+                editor.apply();
 
                 Navigation.findNavController(view).navigate(R.id.action_nameFragment_to_statisticFragment, bundle);
             }
