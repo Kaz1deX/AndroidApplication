@@ -70,7 +70,6 @@ public class NameFragment extends Fragment {
 
                 // app-specific storage
                 createFileAppSpecificStorage(file_name, student_name);
-
                 // external storage
                 createFileExternalStorage(file_name, student_name);
 
