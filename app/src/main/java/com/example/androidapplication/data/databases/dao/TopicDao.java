@@ -17,5 +17,5 @@ public interface TopicDao {
     @Query("DELETE FROM topic_table")
     void deleteAll();
     @Query("SELECT * FROM topic_table ORDER BY name")
-    LiveData<List<TopicEntity>> getAllAuthors();
+    LiveData<List<TopicEntity>> getAllTopics();
 }

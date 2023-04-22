@@ -17,5 +17,5 @@ public interface QuestionDao {
     @Query("DELETE FROM question_table")
     void deleteAll();
     @Query("SELECT * FROM question_table ORDER BY name")
-    LiveData<List<QuestionEntity>> getAllBooks();
+    LiveData<List<QuestionEntity>> getAllQuestions();
 }
