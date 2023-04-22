@@ -1,9 +1,9 @@
-package com.example.androidapplication.data.datarepositories;
+package com.example.androidapplication.data.repositories;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.androidapplication.data.datasources.QuestionDataSource;
-import com.example.androidapplication.data.datamodels.QuestionModel;
+import com.example.androidapplication.data.sources.QuestionDataSource;
+import com.example.androidapplication.data.models.QuestionModel;
 
 import java.util.List;
 

@@ -12,7 +12,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidapplication.R;
-import com.example.androidapplication.data.datamodels.QuestionModel;
+import com.example.androidapplication.data.models.QuestionModel;
 
 import java.util.ArrayList;
 import java.util.List;

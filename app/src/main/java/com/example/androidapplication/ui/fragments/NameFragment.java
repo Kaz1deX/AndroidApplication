@@ -72,6 +72,7 @@ public class NameFragment extends Fragment {
                 createFileAppSpecificStorage(file_name, student_name);
                 // external storage
                 createFileExternalStorage(file_name, student_name);
+
                 editor.putString("student", binding.editTextTextPersonName4
                         .getText().toString());
                 editor.apply();
