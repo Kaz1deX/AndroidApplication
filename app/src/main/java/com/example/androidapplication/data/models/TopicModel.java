@@ -1,20 +1,20 @@
 package com.example.androidapplication.data.models;
 
 public class TopicModel {
-    private String topic;
+    private String name;
     private int number_subtopics;
 
     public TopicModel() {
         this("No topic", 0);
     }
 
-    public TopicModel(String topic, int number_subtopics) {
-        this.topic = topic;
+    public TopicModel(String name, int number_subtopics) {
+        this.name = name;
         this.number_subtopics = number_subtopics;
     }
 
-    public String getTopic() {
-        return topic;
+    public String getName() {
+        return name;
     }
 
     public int getNumberSubtopics() {

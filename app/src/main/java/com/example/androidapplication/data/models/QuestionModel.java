@@ -13,7 +13,7 @@ public class QuestionModel {
         this.complexity = complexity;
     }
 
-    public String getQuestion() {
+    public String getName() {
         return name;
     }
 
