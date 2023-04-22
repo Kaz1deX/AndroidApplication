@@ -9,6 +9,8 @@ import com.example.androidapplication.data.models.QuestionModel;
 @Entity(tableName = "question_table")
 public class QuestionEntity {
     @PrimaryKey(autoGenerate = true)
+    private int id;
+
     private String name;
     private String complexity;
 
@@ -22,6 +24,12 @@ public class QuestionEntity {
     }
     public void setName(@NonNull String name) {
         this.name = name;
+    }
+    public int getId() {
+        return this.id;
+    }
+    public void setId(@NonNull int id) {
+        this.id = id;
     }
     public String getComplexity() {
         return this.complexity;

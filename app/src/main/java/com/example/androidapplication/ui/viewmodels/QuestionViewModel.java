@@ -19,7 +19,7 @@ public class QuestionViewModel extends AndroidViewModel {
         mRepository = new QuestionRepository(application);
         mAllQuestions = mRepository.getAllQuestions();
     }
-    public LiveData<List<QuestionModel>> getAllBooks() { return mAllQuestions; }
+    public LiveData<List<QuestionModel>> getAllQuestions() { return mAllQuestions; }
     public void insert(QuestionModel question) { mRepository
             .insert(new QuestionEntity(question.getName(), question.getComplexity())); }
 }

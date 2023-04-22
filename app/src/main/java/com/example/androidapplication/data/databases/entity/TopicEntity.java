@@ -9,11 +9,19 @@ import com.example.androidapplication.data.models.TopicModel;
 @Entity(tableName = "topic_table")
 public class TopicEntity {
     @PrimaryKey(autoGenerate = true)
+    private int id;
+
+    public int getNumberSubtopics() {
+        return this.numberSubtopics;
+    }
+
+    private int numberSubtopics;
+
+
     private String name;
-    private int number_subtopics;
-    public TopicEntity(@NonNull String name, int number_subtopics) {
+    public TopicEntity(@NonNull String name, int numberSubtopics) {
         this.name = name;
-        this.number_subtopics = number_subtopics;
+        this.numberSubtopics = numberSubtopics;
     }
     @NonNull
     public String getName() {
@@ -22,13 +30,15 @@ public class TopicEntity {
     public void setName(@NonNull String name) {
         this.name = name;
     }
-    public int getNumberSubtopics() {
-        return number_subtopics;
+
+    public int getId() {
+        return this.id;
     }
-    public void setNumberSubtopics(int number_subtopics) {
-        this.number_subtopics = number_subtopics;
+    public void setId(@NonNull int id) {
+        this.id = id;
     }
+
     public TopicModel toTopic(){
-        return new TopicModel(this.name, this.number_subtopics);
+        return new TopicModel(this.name, this.numberSubtopics);
     }
 }

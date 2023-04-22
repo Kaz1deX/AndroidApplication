@@ -37,14 +37,14 @@ public class MyCustomRecyclerViewAdapter extends RecyclerView.Adapter<MyCustomRe
     @Override
     public void onBindViewHolder(MyCustomRecyclerViewAdapter.ViewHolder holder, int position) {
         QuestionModel question = questions.get(position);
-        holder.question_text.setText(question.getQuestion());
+        holder.question_text.setText(question.getName());
         holder.car_image.setImageResource(R.drawable.car);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putString("question", question.getQuestion());
+                bundle.putString("question", question.getName());
                 Navigation.findNavController(view).navigate(R.id.action_recyclerViewFragment2_to_itemInfoFragment, bundle);
             }
         });

@@ -13,7 +13,7 @@ import java.util.List;
 @Dao
 public interface QuestionDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    long insert(QuestionEntity book);
+    long insert(QuestionEntity question);
     @Query("DELETE FROM question_table")
     void deleteAll();
     @Query("SELECT * FROM question_table ORDER BY name")

@@ -77,7 +77,7 @@ public class NameFragment extends Fragment {
                         .getText().toString());
                 editor.apply();
 
-                Navigation.findNavController(view).navigate(R.id.action_nameFragment_to_statisticFragment, bundle);
+                Navigation.findNavController(view).navigate(R.id.action_nameFragment_to_questionFragment, bundle);
             }
         });
 

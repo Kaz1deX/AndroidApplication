@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.androidapplication.R;
+import com.example.androidapplication.data.models.QuestionModel;
 import com.example.androidapplication.databinding.FragmentRecyclerViewBinding;
 import com.example.androidapplication.ui.adapters.MyCustomRecyclerViewAdapter;
 import com.example.androidapplication.ui.viewmodels.QuestionViewModel;
@@ -20,7 +21,6 @@ import com.example.androidapplication.ui.viewmodels.QuestionViewModel;
 public class RecyclerViewFragment extends Fragment {
     FragmentRecyclerViewBinding binding;
     QuestionViewModel questionViewModel;
-
     public RecyclerViewFragment(){
         super(R.layout.fragment_recycler_view);
     }
@@ -35,6 +35,13 @@ public class RecyclerViewFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentRecyclerViewBinding.inflate(inflater, container, false);
+
+        Bundle args = getArguments();
+        if (args != null && args.containsKey("RESULT_OK_NAME") && args.containsKey("RESULT_OK_COMPLEXITY")) {
+            QuestionModel question = new QuestionModel(args.getString("RESULT_OK_NAME"), args.getString("RESULT_OK_COMPLEXITY"));
+            questionViewModel.insert(question);
+        }
+
         return binding.getRoot();
     }
 
@@ -48,6 +55,6 @@ public class RecyclerViewFragment extends Fragment {
         MyCustomRecyclerViewAdapter recyclerViewAdapter = new MyCustomRecyclerViewAdapter(getActivity());
         binding.recyclerView.setAdapter(recyclerViewAdapter);
 
-        questionViewModel.questions.observe(getViewLifecycleOwner(), questions -> recyclerViewAdapter.updateQuestions(questions));
+        questionViewModel.getAllQuestions().observe(getViewLifecycleOwner(), questions -> recyclerViewAdapter.updateQuestions(questions));
     }
 }

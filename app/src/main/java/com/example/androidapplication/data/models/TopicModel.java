@@ -14,10 +14,10 @@ public class TopicModel {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getNumberSubtopics() {
-        return number_subtopics;
+        return this.number_subtopics;
     }
 }
