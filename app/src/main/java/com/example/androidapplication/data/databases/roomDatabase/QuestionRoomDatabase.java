@@ -35,6 +35,7 @@ public abstract class QuestionRoomDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
+
     public static final RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
