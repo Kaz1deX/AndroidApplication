@@ -35,13 +35,6 @@ public class RecyclerViewFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentRecyclerViewBinding.inflate(inflater, container, false);
-
-        Bundle args = getArguments();
-        if (args != null && args.containsKey("RESULT_OK_NAME") && args.containsKey("RESULT_OK_COMPLEXITY")) {
-            QuestionModel question = new QuestionModel(args.getString("RESULT_OK_NAME"), args.getString("RESULT_OK_COMPLEXITY"));
-            questionViewModel.insert(question);
-        }
-
         return binding.getRoot();
     }
 

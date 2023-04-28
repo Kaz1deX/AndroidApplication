@@ -17,7 +17,6 @@ import java.util.concurrent.Executors;
 @Database(entities = {QuestionEntity.class}, version = 1, exportSchema = false)
 public abstract class QuestionRoomDatabase extends RoomDatabase {
     public abstract QuestionDao questionDao();
-
     private static volatile QuestionRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
     public static final ExecutorService databaseWriteExecutor =
