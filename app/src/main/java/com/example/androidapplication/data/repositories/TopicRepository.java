@@ -1,5 +1,6 @@
 package com.example.androidapplication.data.repositories;
 
+import android.app.Application;
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
@@ -17,8 +18,8 @@ public class TopicRepository {
     private final TopicDao mTopicDao;
     private final LiveData<List<TopicModel>> mAllTopics;
     private final Context context;
-    TopicRoomDatabase roomDatabase;
-    public TopicRepository(Context applicationContext) {
+    private TopicRoomDatabase roomDatabase;
+    public TopicRepository(Application applicationContext) {
         context = applicationContext;
         roomDatabase = TopicRoomDatabase.getDatabase(context);
         mTopicDao = TopicRoomDatabase.getDatabase(context).topicDao();
@@ -28,7 +29,6 @@ public class TopicRepository {
     public LiveData<List<TopicModel>> getAllTopics() {
         return mAllTopics;
     }
-
     public void insert(TopicEntity topic) {
         TopicRoomDatabase.databaseWriteExecutor.execute(() -> {
             mTopicDao.insert(topic);

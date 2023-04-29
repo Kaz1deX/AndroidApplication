@@ -18,7 +18,7 @@ public class QuestionRepository {
     private final QuestionDao mQuestionDao;
     private final LiveData<List<QuestionModel>> mAllQuestions;
     private final Context context;
-    QuestionRoomDatabase roomDatabase;
+    private QuestionRoomDatabase roomDatabase;
     public QuestionRepository(Application applicationContext) {
         context = applicationContext;
         roomDatabase = QuestionRoomDatabase.getDatabase(context);

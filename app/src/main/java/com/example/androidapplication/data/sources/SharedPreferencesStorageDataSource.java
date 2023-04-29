@@ -6,12 +6,10 @@ import android.content.SharedPreferences;
 import java.io.File;
 
 public class SharedPreferencesStorageDataSource {
-    private Context context;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
     public SharedPreferencesStorageDataSource(Context context) {
-        this.context = context;
         sharedPreferences = context.getSharedPreferences("user_name", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
